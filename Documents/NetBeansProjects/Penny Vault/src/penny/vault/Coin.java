@@ -10,19 +10,20 @@ package penny.vault;
  *
  * @author becar1504
  */
-public class PennyVault {
+public class Coin {
     //vaultSize is in cubic cm
     private final double vaultSize=1000;
     private int coinNum,coinNumLeft;
     private double coinSize,spaceLeft,coinSpaceLeft;
-    private double coinValue;
+    private double coinValue,coinTotalValue;
     private static double totalSize,totalValue,countNum;
     
     //creates new coin with the monetary value and size of a single coin of that type   
-    public PennyVault(double size,double value){
+    public Coin(double size,double value){
         coinSize=size;
         coinNum=0;
         coinValue=value;
+        totalSize=0;
     }
    public void addCoin(int add){
        double nextTotalSize=(totalSize+=(((double)add)*coinSize));
@@ -35,7 +36,8 @@ public class PennyVault {
        else{
        coinNum+=add;
        totalValue+=(((double)add)*coinValue);
-       totalSize+=(((double)add)*coinSize);
+       totalValue+=(((double)add)*coinValue);
+       coinTotalValue+=(((double)add)*coinValue);
        }
     }
     public void takeCoin(int take){
@@ -48,8 +50,9 @@ public class PennyVault {
         }
         else{
             coinNum-=take;
-            totalValue-=(((double)take)*coinSize);
+            totalValue-=(((double)take)*coinValue);
             totalSize-=(((double)take)*coinSize);
+            coinTotalValue-=(((double)take)*coinValue);
         }
     }
     
@@ -57,7 +60,10 @@ public class PennyVault {
         return totalValue;
     }
     public int coinNum(){
-        
+     return coinNum;   
+    }
+    public double spaceUsed(){
+        return totalSize;
     }
     
 }
