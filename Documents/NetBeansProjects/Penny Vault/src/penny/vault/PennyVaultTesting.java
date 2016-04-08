@@ -30,33 +30,58 @@ public class PennyVaultTesting {
         int methodChoice=in.nextInt();
         System.out.println("Vault space is 1000 cubic cm");
         System.out.println("1.  add coin\n2.  take coin\n3.  Total Value\n4.  Number of a coin type\5.  Space used");
-        
+        String []coinChoice=new String[6];
+                coinChoice[0]="penny";
+                coinChoice[1]="nickel";
+                coinChoice[2]="dime";
+                coinChoice[3]="quarter";
+                coinChoice[4]="loonie";
+                coinChoice[5]="toonie";
+                choice="add";
         switch(methodChoice){
             case 1: 
-                choice="add";
+                
                 
                     System.out.println("Type the corresponding numer to chose the type of coin you would like to add");
                     int addChoice=in.nextInt();
-                    String coinChoice;
+                    
                     switch(addChoice){
-                        case 1:coinChoice="penny";
+                        case 1:System.out.println(coinChoice[0]);
                         break;
-                        case 2:coinChoice="nickel";
+                        case 2:System.out.println(coinChoice[1]);
                         break;
-                        case 3:coinChoice="dime";
+                        case 3:System.out.println(coinChoice[2]);
                         break;
-                        case 4:coinChoice="quarter";
+                        case 4:System.out.println(coinChoice[3]);
                         break;
-                        case 5:coinChoice="loonie";
+                        case 5:System.out.println(coinChoice[4]);
                         break;
-                        case 6:coinChoice="toonie";
+                        case 6:System.out.println(coinChoice[5]);
                         break;
-                        default:coinChoice="unknown currentcy";
+                        default:System.out.println("unknown currentcy");
                         break;
                     }
                 
                 break;
             case 2: choice="take";
+                System.out.println("Type the corresponding numer to chose the type of coin you would like to add");
+                    int addChoice=in.nextInt();
+                    
+                    switch(addChoice){
+                        case 1:System.out.println(coinChoice[0]);
+                        break;
+                        case 2:System.out.println(coinChoice[1]);
+                        break;
+                        case 3:System.out.println(coinChoice[2]);
+                        break;
+                        case 4:System.out.println(coinChoice[3]);
+                        break;
+                        case 5:System.out.println(coinChoice[4]);
+                        break;
+                        case 6:System.out.println(coinChoice[5]);
+                        break;
+                        default:System.out.println("unknown currentcy");
+                        break;
             break;
             case 3:choice="totalValue";
             break;
